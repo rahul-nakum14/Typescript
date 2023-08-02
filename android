@@ -1,0 +1,59 @@
+editText1.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+
+        Button btnclosedialog;
+        final Dialog dialog = new Dialog(BillEntry.this);
+        dialog.setContentView(R.layout.searchable_list_dialog);
+        dialog.setTitle("Title");
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = (int) (displayMetrics.heightPixels * 0.4);
+        int width = (int) (displayMetrics.widthPixels * 0.9);
+        dialog.getWindow().setLayout(width, height);
+        dialog.show();
+
+        btnclosedialog = dialog.findViewById(R.id.btnClose); // Find the "Close" button inside the dialog
+
+        btnclosedialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss(); // Close the dialog when the "Close" button inside the dialog is clicked
+            }
+        });
+    }
+});
+
+
+///Crashed 
+
+ editText1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Button btnclosedialog = findViewById(R.id.btnClose);
+
+                final Dialog dialog = new Dialog(BillEntry.this);
+                dialog.setContentView(R.layout.searchable_list_dialog);
+                dialog.setTitle("Title");
+
+                DisplayMetrics displayMetrics = new DisplayMetrics();
+                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                int height = (int) (displayMetrics.heightPixels * 0.4);
+                int width = (int)(displayMetrics.widthPixels * 0.9);
+                dialog.getWindow().setLayout(width, height);
+                dialog.show();
+
+                btnclosedialog.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getApplicationContext(),"TEsting",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+
+
+            }
+        });
