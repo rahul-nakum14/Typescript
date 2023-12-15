@@ -342,3 +342,46 @@ const u1 : userdata = {
 }
 
 
+Interface part -2 
+-----------------------
+    
+interface userdata  {
+    name : string,
+    age: number,
+    paid:boolean,
+    starttrial():string
+    getcoupn(coupnname:string):number
+}
+
+//reopening an interface
+interface userdata {
+    githublogin : string
+}
+
+// we can also exten interface
+
+interface e1 extends userdata{
+    role : "admin" | "user"
+}
+
+const u1 : e1 = {
+    name:"dsfs",
+    age:234,
+    role:"admin",
+    paid : true,
+
+    githublogin:"342534",
+
+    starttrial: () => {
+        return "afsdf"
+    },
+
+    getcoupn:(coupnname: "Nancy") =>{
+        return 23
+    }
+}
+
+
+
+// the difference between interface and type is we can reopn interface and extends it while in type we cannot
+
