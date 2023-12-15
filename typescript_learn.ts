@@ -296,3 +296,22 @@ let seatallotment : "first" | "window" | "middle"
 
 seatallotment = "first" // allowed 
 seatallotment= "crew" // not allowe strict type of only
+
+
+Tuple 
+-----------------
+
+let tuser : [string,number,boolean]
+
+tuser = ["dsf",324,false]
+
+let rgb : [number,number,number] = [32,23,2]
+
+
+type user = [number,string]
+
+const newuser : user = [ 112, "3453"]
+
+newuser[1] = "dfsdf.com"
+
+newuser.push(true) //
