@@ -315,3 +315,30 @@ const newuser : user = [ 112, "3453"]
 newuser[1] = "dfsdf.com"
 
 newuser.push(true) //
+
+INterface - part 1 
+----------------------
+    
+interface userdata  {
+    name : string,
+    age: number,
+    paid:boolean,
+    starttrial():string
+    getcoupn(coupnname:string):number
+}
+
+const u1 : userdata = {
+    name:"dsfs",
+    age:234,
+    paid : true,
+
+    starttrial: () => {
+        return "afsdf"
+    },
+
+    getcoupn:(coupnname: "Nancy") =>{
+        return 23
+    }
+}
+
+
