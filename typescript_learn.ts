@@ -110,3 +110,56 @@ function logerror(errmsg:string):void { // void mean reurn nothing
 function handleeror(errmsg:string):never { // never is mostly same as void but used to handle error in a robust way
     throw new Error (errmsg) 
 }
+
+
+//bad behaviour of objects
+-----------------------------
+
+
+//Object as a argument 
+function createUser({name,isActive}:{name:string,isActive:boolean}){
+    
+}
+
+
+createUser({name:"ABc",isActive:true})
+
+createUser({name:"adadas",isActive:true})
+
+function createCourse():{name:string,isActive:boolean}{
+    return {name:"abc",isActive: true}
+}
+createCourse()
+
+
+//Bad object behaviour
+
+
+function createUser1({name,isActive}:{name:string,isActive:boolean}){
+    
+}
+
+let newuser = {name:"ABc",isActive:true,email:"sdfsdf"}
+createUser1(newuser) // alllow to pass email which is not defined in a createUser1
+
+
+
+
+
+//type alias in typescript
+---------------------------
+type bool = boolean; // Create alias bool of boolean data type
+
+type User = {
+    name: string;
+    age: number;
+    isPaid: bool;
+}
+
+function createUser123(user: User):User{
+    return {name:"sfdfsd",age:123,isPaid:true}
+}
+createUser123({name:"sfdfsd",age:123,isPaid:true})
+
+
+
