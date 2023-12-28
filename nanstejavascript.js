@@ -42,5 +42,18 @@ Closure :Function bundled with its lexical environment is known as a closure. Wh
 execution context but still it remembers the reference it was pointing to. Its not just that function alone it returns but the entire closure and that's where it becomes interesting
 
 
+function x(){
+  var a = 7;
+  function y(){
+    consoloe.log(a);
+  }
+  return y;
+}
+var z = x()
+console.log(z);
 
+z();
 
+it will print 7 coz when z = x() all the call stack and everything vanished but when return y it will 
+return copy of y and assign to z and here it also remember its lexical scope which is a = 7 values and thats 
+the clouser
